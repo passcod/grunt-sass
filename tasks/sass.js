@@ -1,7 +1,13 @@
 'use strict';
 const util = require('util');
 const path = require('path');
-const sass = require('node-sass');
+
+let sass;
+try {
+	sass = require('sass');
+} catch (_) {
+	sass = require('node-sass');
+}
 
 module.exports = grunt => {
 	grunt.verbose.writeln(`\n${sass.info}\n`);
